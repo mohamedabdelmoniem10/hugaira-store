@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 245, 240, 235;
+  --background-end-rgb: 250, 245, 240;
+
+  /* Hugaira color scheme */
+  --color-beige-light: 245, 240, 235;
+  --color-beige: 235, 225, 215;
+  --color-beige-dark: 220, 210, 200;
+  --color-brown-light: 180, 160, 140;
+  --color-brown: 120, 90, 70;
+  --color-brown-dark: 80, 60, 50;
+  --color-blush-light: 245, 225, 220;
+  --color-blush: 230, 200, 190;
+  --color-blush-dark: 210, 180, 170;
+
+  --background: var(--color-beige-light);
+  --foreground: var(--color-brown-dark);
+  --card: 255, 255, 255;
+  --card-foreground: var(--color-brown-dark);
+  --popover: 255, 255, 255;
+  --popover-foreground: var(--color-brown-dark);
+  --primary: var(--color-brown);
+  --primary-foreground: 255, 255, 255;
+  --secondary: var(--color-blush);
+  --secondary-foreground: var(--color-brown-dark);
+  --muted: var(--color-beige);
+  --muted-foreground: var(--color-brown-light);
+  --accent: var(--color-blush-light);
+  --accent-foreground: var(--color-brown);
+  --destructive: 220, 80, 60;
+  --destructive-foreground: 255, 255, 255;
+  --border: var(--color-beige-dark);
+  --input: var(--color-beige);
+  --ring: var(--color-brown);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 40, 30, 25;
+  --foreground: 235, 225, 215;
+  --card: 50, 40, 35;
+  --card-foreground: 235, 225, 215;
+  --popover: 50, 40, 35;
+  --popover-foreground: 235, 225, 215;
+  --primary: var(--color-beige);
+  --primary-foreground: 80, 60, 50;
+  --secondary: 80, 60, 50;
+  --secondary-foreground: 235, 225, 215;
+  --muted: 70, 50, 40;
+  --muted-foreground: 180, 160, 140;
+  --accent: 90, 70, 60;
+  --accent-foreground: 235, 225, 215;
+  --destructive: 230, 90, 70;
+  --destructive-foreground: 255, 255, 255;
+  --border: 80, 60, 50;
+  --input: 80, 60, 50;
+  --ring: 180, 160, 140;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='rgba(180, 160, 140, .05)' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-playfair font-medium;
+  }
+  p,
+  span,
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    @apply font-lato;
+  }
+
+  /* Arabic typography */
+  [dir="rtl"] h1,
+  [dir="rtl"] h2,
+  [dir="rtl"] h3,
+  [dir="rtl"] h4,
+  [dir="rtl"] h5,
+  [dir="rtl"] h6 {
+    @apply font-amiri font-bold;
+  }
+  [dir="rtl"] p,
+  [dir="rtl"] span,
+  [dir="rtl"] a,
+  [dir="rtl"] button,
+  [dir="rtl"] input,
+  [dir="rtl"] select,
+  [dir="rtl"] textarea {
+    @apply font-cairo;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md transition-all;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 px-4 py-2 rounded-md transition-all;
+  }
+
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary hover:text-primary-foreground px-4 py-2 rounded-md transition-all;
+  }
+
+  .product-card {
+    @apply bg-card text-card-foreground rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .input-field {
+    @apply w-full p-2 border border-input rounded-md focus:outline-none focus:ring-1 focus:ring-primary;
+  }
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Floral background pattern for specific sections */
+.floral-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z' fill='rgba(230, 200, 190, .1)' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-beige-light));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-brown-light));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-brown));
+}

@@ -1,0 +1,106 @@
+{
+  "common": {
+    "addToCart": "Add to Cart",
+    "addToWishlist": "Add to wishlist",
+    "quickView": "Quick view",
+    "viewAll": "View All Products",
+    "newArrival": "New",
+    "bestSeller": "Best Seller",
+    "featured": "Featured",
+    "sale": "Sale",
+    "outOfStock": "Out of Stock",
+    "inStock": "In Stock",
+    "price": "Price",
+    "category": "Category",
+    "color": "Color",
+    "size": "Size",
+    "quantity": "Quantity",
+    "description": "Description",
+    "reviews": "Reviews",
+    "shipping": "Shipping",
+    "returns": "Returns"
+  },
+  "navigation": {
+    "home": "Home",
+    "products": "All Products",
+    "categories": "Shop by Category",
+    "about": "About",
+    "contact": "Contact",
+    "cart": "Cart",
+    "wishlist": "Wishlist",
+    "account": "Account",
+    "search": "Search",
+    "searchProducts": "Search Products",
+    "searchPlaceholder": "Search for products...",
+    "menu": "Menu",
+    "allProducts": "All Products",
+    "niqabs": "Niqabs",
+    "abayas": "Abayas",
+    "hijabs": "Hijabs",
+    "isdalat": "Isdalat",
+    "accessories": "Accessories",
+    "categoriesDescription": "Explore our curated categories of modest fashion essentials, designed for style and comfort."
+  },
+  "categories": {
+    "niqab": "Niqab",
+    "abaya": "Abaya",
+    "hijab": "Hijab",
+    "isdalat": "Isdalat",
+    "accessories": "Accessories"
+  },
+  "home": {
+    "heroTitle": "Elegant Modest Fashion",
+    "heroSubtitle": "Discover our beautiful collection of modest clothing designed for the modern Muslim woman",
+    "shopNow": "Shop Now",
+    "ourCollection": "Our Collection",
+    "collectionDescription": "Discover our carefully curated selection of modest fashion pieces, designed with quality materials and attention to detail.",
+    "featuredProducts": "Featured",
+    "bestSellers": "Best Sellers",
+    "newArrivals": "New Arrivals"
+  },
+  "products": {
+    "premiumBlackNiqab": "Premium Black Niqab",
+    "premiumBlackNiqabDesc": "Our premium quality niqab made from breathable fabric for all-day comfort.",
+    "elegantAbaya": "Elegant Abaya",
+    "elegantAbayaDesc": "A beautiful abaya with subtle embroidery details.",
+    "softJerseyHijab": "Soft Jersey Hijab",
+    "softJerseyHijabDesc": "Soft jersey hijab that drapes beautifully.",
+    "flowyIsdalat": "Flowy Isdalat",
+    "flowyIsdatatDesc": "Beautiful and flowy isdalat for a modest look.",
+    "classicBlackAbaya": "Classic Black Abaya",
+    "classicBlackAbayaDesc": "Timeless black abaya with elegant design.",
+    "luxuryNiqabSet": "Luxury Niqab Set",
+    "luxuryNiqabSetDesc": "Premium niqab set with matching accessories.",
+    "modernHijabCollection": "Modern Hijab Collection",
+    "modernHijabCollectionDesc": "Contemporary hijab designs for everyday wear.",
+    "elegantIsdatatSet": "Elegant Isdalat Set",
+    "elegantIsdatatSetDesc": "Complete isdalat set for special occasions."
+  },
+  "benefits": {
+    "title": "Why Choose Hugaira",
+    "subtitle": "We're committed to providing you with the best shopping experience from start to finish.",
+    "qualityTitle": "Quality Assurance",
+    "qualityDesc": "Every product is carefully inspected to ensure premium quality and craftsmanship.",
+    "shippingTitle": "Fast Shipping",
+    "shippingDesc": "We offer express shipping options to get your order delivered quickly and safely.",
+    "returnsTitle": "Easy Returns",
+    "returnsDesc": "Not satisfied? Return within 30 days for a full refund or exchange.",
+    "paymentTitle": "Secure Payment",
+    "paymentDesc": "Your payment information is encrypted and securely processed."
+  },
+  "testimonials": {
+    "title": "Customer Stories",
+    "subtitle": "Hear what our customers have to say about their Hugaira experience."
+  },
+  "instagram": {
+    "title": "Follow Us on Instagram",
+    "subtitle": "Join our community and get inspired by our latest collections and styling ideas."
+  },
+  "footer": {
+    "aboutUs": "About Us",
+    "customerService": "Customer Service",
+    "followUs": "Follow Us",
+    "newsletter": "Newsletter",
+    "subscribeText": "Subscribe to get updates on new arrivals and special offers"
+  }
+}

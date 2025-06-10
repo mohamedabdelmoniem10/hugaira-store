@@ -1,0 +1,108 @@
+{
+  "common": {
+    "addToCart": "أضف إلى السلة",
+    "addToWishlist": "أضف إلى المفضلة",
+    "quickView": "عرض سريع",
+    "viewAll": "عرض جميع المنتجات",
+    "newArrival": "جديد",
+    "bestSeller": "الأكثر مبيعاً",
+    "featured": "مميز",
+    "sale": "تخفيض",
+    "outOfStock": "نفد من المخزون",
+    "inStock": "متوفر",
+    "price": "السعر",
+    "category": "الفئة",
+    "color": "اللون",
+    "size": "المقاس",
+    "quantity": "الكمية",
+    "description": "الوصف",
+    "reviews": "التقييمات",
+    "shipping": "الشحن",
+    "returns": "الإرجاع"
+  },
+  "navigation": {
+    "home": "الرئيسية",
+    "products": "جميع المنتجات",
+    "categories": "تسوق حسب الفئة",
+    "about": "من نحن",
+    "contact": "اتصل بنا",
+    "cart": "السلة",
+    "wishlist": "المفضلة",
+    "account": "الحساب",
+    "search": "البحث",
+    "searchProducts": "البحث في المنتجات",
+    "searchPlaceholder": "ابحث عن المنتجات...",
+    "menu": "القائمة",
+    "allProducts": "جميع المنتجات",
+    "niqabs": "نقاب",
+    "abayas": "عباءات",
+    "hijabs": "حجاب",
+    "isdalat": "إسدال",
+    "accessories": "إكسسوارات",
+    "categoriesDescription": "اكتشفي فئاتنا المختارة بعناية من أساسيات الأزياء المحتشمة، المصممة للأناقة والراحة."
+  },
+  "categories": {
+    "niqab": "نقاب",
+    "abaya": "عباءة",
+    "hijab": "حجاب",
+    "isdalat": "إسدال",
+    "accessories": "إكسسوارات"
+  },
+  "home": {
+    "heroTitle": "أزياء محتشمة أنيقة",
+    "heroSubtitle": "اكتشفي مجموعتنا الجميلة من الملابس المحتشمة المصممة للمرأة المسلمة العصرية",
+    "shopNow": "تسوقي الآن",
+    "ourCollection": "مجموعتنا",
+    "collectionDescription": "اكتشفي مجموعتنا المختارة بعناية من قطع الأزياء المحتشمة، المصممة بمواد عالية الجودة واهتمام بالتفاصيل.",
+    "featuredProducts": "مميز",
+    "bestSellers": "الأكثر مبيعاً",
+    "newArrivals": "وصل حديثاً",
+    "viewCollection": "عرض المجموعة",
+    "shopAbayas": "تسوقي العباءات"
+  },
+  "products": {
+    "premiumBlackNiqab": "نقاب أسود فاخر",
+    "premiumBlackNiqabDesc": "نقابنا عالي الجودة مصنوع من قماش قابل للتنفس للراحة طوال اليوم.",
+    "elegantAbaya": "عباءة أنيقة",
+    "elegantAbayaDesc": "عباءة جميلة بتفاصيل تطريز رقيقة.",
+    "softJerseyHijab": "حجاب جيرسي ناعم",
+    "softJerseyHijabDesc": "حجاب جيرسي ناعم ينسدل بجمال.",
+    "flowyIsdalat": "إسدال منسدل",
+    "flowyIsdatatDesc": "إسدال جميل ومنسدل لإطلالة محتشمة.",
+    "classicBlackAbaya": "عباءة سوداء كلاسيكية",
+    "classicBlackAbayaDesc": "عباءة سوداء خالدة بتصميم أنيق.",
+    "luxuryNiqabSet": "طقم نقاب فاخر",
+    "luxuryNiqabSetDesc": "طقم نقاب فاخر مع إكسسوارات متطابقة.",
+    "modernHijabCollection": "مجموعة حجاب عصرية",
+    "modernHijabCollectionDesc": "تصاميم حجاب عصرية للارتداء اليومي.",
+    "elegantIsdatatSet": "طقم إسدال أنيق",
+    "elegantIsdatatSetDesc": "طقم إسدال كامل للمناسبات الخاصة."
+  },
+  "benefits": {
+    "title": "لماذا تختارين حجيرة",
+    "subtitle": "نحن ملتزمون بتقديم أفضل تجربة تسوق لك من البداية إلى النهاية.",
+    "qualityTitle": "ضمان الجودة",
+    "qualityDesc": "يتم فحص كل منتج بعناية لضمان الجودة الفائقة والحرفية المتميزة.",
+    "shippingTitle": "شحن سريع",
+    "shippingDesc": "نقدم خيارات شحن سريعة لتوصيل طلبك بسرعة وأمان.",
+    "returnsTitle": "إرجاع سهل",
+    "returnsDesc": "غير راضية؟ يمكنك الإرجاع خلال 30 يوماً لاسترداد كامل أو استبدال.",
+    "paymentTitle": "دفع آمن",
+    "paymentDesc": "معلومات الدفع الخاصة بك مشفرة ومعالجة بأمان."
+  },
+  "testimonials": {
+    "title": "قصص العملاء",
+    "subtitle": "اسمعي ما تقوله عملاؤنا عن تجربتهن مع حجيرة."
+  },
+  "instagram": {
+    "title": "تابعونا على إنستغرام",
+    "subtitle": "انضمي إلى مجتمعنا واستلهمي من أحدث مجموعاتنا وأفكار التنسيق."
+  },
+  "footer": {
+    "aboutUs": "من نحن",
+    "customerService": "خدمة العملاء",
+    "followUs": "تابعونا",
+    "newsletter": "النشرة الإخبارية",
+    "subscribeText": "اشتركي للحصول على تحديثات حول الوصولات الجديدة والعروض الخاصة"
+  }
+}
