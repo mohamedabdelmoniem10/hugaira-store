@@ -6,11 +6,17 @@ export interface Product {
   salePrice?: number;
   images: string[];
   description: string;
-  category: Category;
+  category:
+    | Category
+    | {
+        id: string;
+        name: string;
+        slug: string;
+      };
   subcategory?: string;
   colors: string[];
   sizes: string[];
-  material: string[];
+  materials: string[];
   featured?: boolean;
   newArrival?: boolean;
   bestSeller?: boolean;
@@ -20,7 +26,15 @@ export interface Product {
   updatedAt: string;
 }
 
-export type Category = 'niqab' | 'abaya' | 'hijab' | 'isdalat' | 'accessories';
+export interface Category {
+  id: string;
+  name: string;
+  slug: string;
+  description?: string;
+  image?: string;
+  createdAt?: string;
+  updatedAt?: string;
+}
 
 export interface CartItem {
   id: string;
@@ -38,7 +52,7 @@ export interface User {
   id: string;
   name: string;
   email: string;
-  role: 'customer' | 'admin';
+  role: "customer" | "admin";
   address?: Address;
 }
 
@@ -65,7 +79,12 @@ export interface Order {
   updatedAt: string;
 }
 
-export type OrderStatus = 'pending' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
+export type OrderStatus =
+  | "pending"
+  | "processing"
+  | "shipped"
+  | "delivered"
+  | "cancelled";
 
 export interface Banner {
   id: string;

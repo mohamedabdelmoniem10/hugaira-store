@@ -1,211 +1,139 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProductCard from "./product-card";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
-import { Product } from "@/lib/types";
 
-// Mock product data - in real app this would come from API
-const mockProducts: Product[] = [
-  {
-    id: "1",
-    name: "Elegant Black Niqab",
-    slug: "elegant-black-niqab",
-    price: 45.99,
-    salePrice: 39.99,
-    images: [
-      "https://images.pexels.com/photos/6044266/pexels-photo-6044266.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/6044266/pexels-photo-6044266.jpeg?auto=compress&cs=tinysrgb&w=600",
-    ],
-    description:
-      "Elegant and comfortable black niqab made from premium breathable fabric.",
-    category: "niqab",
-    colors: ["Black", "Navy"],
-    sizes: ["One Size"],
-    material: ["Cotton", "Polyester"],
-    newArrival: true,
-    inStock: true,
-    stockQuantity: 50,
-    createdAt: "2024-01-01",
-    updatedAt: "2024-01-01",
-  },
-  {
-    id: "2",
-    name: "Premium Abaya - Navy Blue",
-    slug: "premium-abaya-navy-blue",
-    price: 89.99,
-    salePrice: 79.99,
-    images: [
-      "https://images.pexels.com/photos/8533364/pexels-photo-8533364.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/8533364/pexels-photo-8533364.jpeg?auto=compress&cs=tinysrgb&w=600",
-    ],
-    description:
-      "Premium quality navy blue abaya with elegant design and comfortable fit.",
-    category: "abaya",
-    colors: ["Navy", "Black", "Brown"],
-    sizes: ["S", "M", "L", "XL"],
-    material: ["Crepe", "Polyester"],
-    bestSeller: true,
-    inStock: true,
-    stockQuantity: 30,
-    createdAt: "2024-01-01",
-    updatedAt: "2024-01-01",
-  },
-  {
-    id: "3",
-    name: "Soft Cotton Hijab Set",
-    slug: "soft-cotton-hijab-set",
-    price: 24.99,
-    salePrice: 19.99,
-    images: [
-      "https://images.pexels.com/photos/8460850/pexels-photo-8460850.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/8460850/pexels-photo-8460850.jpeg?auto=compress&cs=tinysrgb&w=600",
-    ],
-    description: "Set of 3 soft cotton hijabs in beautiful colors.",
-    category: "hijab",
-    colors: ["Beige", "Pink", "White"],
-    sizes: ["One Size"],
-    material: ["Cotton"],
-    newArrival: true,
-    inStock: true,
-    stockQuantity: 100,
-    createdAt: "2024-01-01",
-    updatedAt: "2024-01-01",
-  },
-  {
-    id: "4",
-    name: "Traditional Isdalat",
-    slug: "traditional-isdalat",
-    price: 65.99,
-    images: [
-      "https://images.pexels.com/photos/11811803/pexels-photo-11811803.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/11811803/pexels-photo-11811803.jpeg?auto=compress&cs=tinysrgb&w=600",
-    ],
-    description:
-      "Traditional isdalat with authentic design and premium quality.",
-    category: "isdalat",
-    colors: ["Black", "Brown"],
-    sizes: ["S", "M", "L"],
-    material: ["Cotton", "Linen"],
-    inStock: true,
-    stockQuantity: 25,
-    createdAt: "2024-01-01",
-    updatedAt: "2024-01-01",
-  },
-  {
-    id: "5",
-    name: "Luxury Silk Hijab",
-    slug: "luxury-silk-hijab",
-    price: 39.99,
-    images: [
-      "https://images.pexels.com/photos/8460850/pexels-photo-8460850.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/8460850/pexels-photo-8460850.jpeg?auto=compress&cs=tinysrgb&w=600",
-    ],
-    description:
-      "Luxurious silk hijab with beautiful drape and elegant finish.",
-    category: "hijab",
-    colors: ["Gold", "Silver", "Rose"],
-    sizes: ["One Size"],
-    material: ["Silk"],
-    featured: true,
-    inStock: true,
-    stockQuantity: 40,
-    createdAt: "2024-01-01",
-    updatedAt: "2024-01-01",
-  },
-  {
-    id: "6",
-    name: "Modest Prayer Dress",
-    slug: "modest-prayer-dress",
-    price: 75.99,
-    images: [
-      "https://images.pexels.com/photos/6169054/pexels-photo-6169054.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/6169054/pexels-photo-6169054.jpeg?auto=compress&cs=tinysrgb&w=600",
-    ],
-    description:
-      "Comfortable and modest prayer dress perfect for daily prayers.",
-    category: "abaya",
-    colors: ["White", "Beige", "Light Blue"],
-    sizes: ["S", "M", "L", "XL"],
-    material: ["Cotton", "Modal"],
-    inStock: true,
-    stockQuantity: 35,
-    createdAt: "2024-01-01",
-    updatedAt: "2024-01-01",
-  },
-  {
-    id: "7",
-    name: "Breathable Summer Niqab",
-    slug: "breathable-summer-niqab",
-    price: 35.99,
-    images: [
-      "https://images.pexels.com/photos/6044266/pexels-photo-6044266.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/6044266/pexels-photo-6044266.jpeg?auto=compress&cs=tinysrgb&w=600",
-    ],
-    description: "Lightweight and breathable niqab perfect for summer weather.",
-    category: "niqab",
-    colors: ["Black", "Brown"],
-    sizes: ["One Size"],
-    material: ["Cotton", "Bamboo"],
-    newArrival: true,
-    inStock: true,
-    stockQuantity: 60,
-    createdAt: "2024-01-01",
-    updatedAt: "2024-01-01",
-  },
-  {
-    id: "8",
-    name: "Embroidered Abaya",
-    slug: "embroidered-abaya",
-    price: 129.99,
-    images: [
-      "https://images.pexels.com/photos/8533364/pexels-photo-8533364.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/8533364/pexels-photo-8533364.jpeg?auto=compress&cs=tinysrgb&w=600",
-    ],
-    description:
-      "Beautiful embroidered abaya with intricate details and premium quality.",
-    category: "abaya",
-    colors: ["Black", "Navy", "Burgundy"],
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    material: ["Crepe", "Silk"],
-    featured: true,
-    inStock: true,
-    stockQuantity: 20,
-    createdAt: "2024-01-01",
-    updatedAt: "2024-01-01",
-  },
-];
+interface ProductWithCategory {
+  id: string;
+  name: string;
+  slug: string;
+  price: number;
+  salePrice?: number;
+  images: string[];
+  description: string;
+  category: {
+    id: string;
+    name: string;
+    slug: string;
+  };
+  subcategory?: string;
+  colors: string[];
+  sizes: string[];
+  materials: string[];
+  featured?: boolean;
+  newArrival?: boolean;
+  bestSeller?: boolean;
+  inStock: boolean;
+  stockQuantity: number;
+  createdAt: string;
+  updatedAt: string;
+}
 
-export default function ProductsGrid() {
-  const [products, setProducts] = useState(mockProducts);
-  const [loading, setLoading] = useState(false);
+interface ProductsResponse {
+  products: ProductWithCategory[];
+  pagination: {
+    page: number;
+    limit: number;
+    total: number;
+    pages: number;
+  };
+}
+
+interface ProductsGridProps {
+  category?: string;
+  featured?: boolean;
+  newArrival?: boolean;
+  bestSeller?: boolean;
+  limit?: number;
+}
+
+export default function ProductsGrid({
+  category,
+  featured,
+  newArrival,
+  bestSeller,
+  limit = 12,
+}: ProductsGridProps) {
+  const [products, setProducts] = useState<ProductWithCategory[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [hasMore, setHasMore] = useState(true);
+  const [page, setPage] = useState(1);
 
-  const loadMore = async () => {
-    setLoading(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+  const fetchProducts = async (
+    pageNum: number = 1,
+    append: boolean = false
+  ) => {
+    try {
+      if (pageNum === 1) {
+        setLoading(true);
+      } else {
+        setLoadingMore(true);
+      }
 
-    // In real app, this would fetch more products
-    const moreProducts = mockProducts.map((product) => ({
-      ...product,
-      id: product.id + products.length.toString(),
-    }));
+      const params = new URLSearchParams();
+      if (category) params.append("category", category);
+      if (featured) params.append("featured", "true");
+      if (newArrival) params.append("newArrival", "true");
+      if (bestSeller) params.append("bestSeller", "true");
+      if (limit) params.append("limit", limit.toString());
+      params.append("page", pageNum.toString());
 
-    setProducts((prev) => [...prev, ...moreProducts]);
-    setLoading(false);
+      const response = await fetch(`/api/products?${params.toString()}`);
+      const data: ProductsResponse = await response.json();
 
-    // Simulate no more products after 3 loads
-    if (products.length >= 24) {
-      setHasMore(false);
+      if (append) {
+        setProducts((prev) => [...prev, ...data.products]);
+      } else {
+        setProducts(data.products);
+      }
+
+      setHasMore(pageNum < data.pagination.pages);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    } finally {
+      setLoading(false);
+      setLoadingMore(false);
     }
   };
 
+  useEffect(() => {
+    setPage(1);
+    fetchProducts(1, false);
+  }, [category, featured, newArrival, bestSeller, limit]);
+
+  const loadMore = () => {
+    const nextPage = page + 1;
+    setPage(nextPage);
+    fetchProducts(nextPage, true);
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-16">
+        <Loader2 className="h-8 w-8 animate-spin" />
+        <span className="ml-2">Loading products...</span>
+      </div>
+    );
+  }
+
+  if (products.length === 0) {
+    return (
+      <div className="text-center py-16">
+        <h3 className="text-xl font-semibold mb-2">No products found</h3>
+        <p className="text-muted-foreground">
+          We couldn't find any products matching your criteria.
+        </p>
+      </div>
+    );
+  }
+
   return (
-    <div>
+    <div className="space-y-8">
       {/* Products Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
@@ -216,26 +144,19 @@ export default function ProductsGrid() {
         <div className="text-center">
           <Button
             onClick={loadMore}
-            disabled={loading}
-            variant="outline"
+            disabled={loadingMore}
             size="lg"
-            className="min-w-[200px]"
+            className="min-w-40"
           >
-            {loading ? (
+            {loadingMore ? (
               <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                <Loader2 className="h-4 w-4 animate-spin mr-2" />
                 Loading...
               </>
             ) : (
               "Load More Products"
             )}
           </Button>
-        </div>
-      )}
-
-      {!hasMore && products.length > 8 && (
-        <div className="text-center text-muted-foreground">
-          <p>You've seen all our products!</p>
         </div>
       )}
     </div>

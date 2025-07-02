@@ -91,7 +91,7 @@ export default function ProductTabs({ product }: ProductTabsProps) {
                 <div>
                   <h4 className="font-medium mb-2">Fabric Composition:</h4>
                   <div className="flex flex-wrap gap-2">
-                    {product.material.map((material) => (
+                    {product.materials?.map((material) => (
                       <Badge
                         key={material}
                         variant="outline"
@@ -99,7 +99,11 @@ export default function ProductTabs({ product }: ProductTabsProps) {
                       >
                         {material}
                       </Badge>
-                    ))}
+                    )) || (
+                      <span className="text-muted-foreground text-sm">
+                        Material information not available
+                      </span>
+                    )}
                   </div>
                 </div>
 

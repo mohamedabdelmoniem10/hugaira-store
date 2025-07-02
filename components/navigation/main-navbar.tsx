@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
+import { useTranslations, useLocale } from "next-intl";
 import { useCart } from "@/contexts/cart-context";
 import {
   ShoppingBag,
@@ -30,6 +30,7 @@ import LanguageSwitcher from "@/components/navigation/language-switcher";
 
 export default function MainNavbar() {
   const pathname = usePathname();
+  const locale = useLocale();
   const { setTheme, theme } = useTheme();
   const { itemCount } = useCart();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,13 +47,13 @@ export default function MainNavbar() {
   }, []);
 
   const navLinks = [
-    { href: "/", label: t("home") },
-    { href: "/products", label: t("allProducts") },
-    { href: "/products/niqab", label: t("niqabs") },
-    { href: "/products/abaya", label: t("abayas") },
-    { href: "/products/hijab", label: t("hijabs") },
-    { href: "/products/isdalat", label: t("isdalat") },
-    { href: "/products/accessories", label: t("accessories") },
+    { href: `/${locale}`, label: t("home") },
+    { href: `/${locale}/products`, label: t("allProducts") },
+    { href: `/${locale}/products/niqab`, label: t("niqabs") },
+    { href: `/${locale}/products/abaya`, label: t("abayas") },
+    { href: `/${locale}/products/hijab`, label: t("hijabs") },
+    { href: `/${locale}/products/isdalat`, label: t("isdalat") },
+    { href: `/${locale}/products/accessories`, label: t("accessories") },
   ];
 
   return (
@@ -66,7 +67,7 @@ export default function MainNavbar() {
     >
       <div className="container-custom flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href={`/${locale}`} className="flex items-center">
           <h1 className="text-2xl font-playfair font-medium">
             <span className="text-brown-dark">Hugaira</span>
             <span className="text-brown-light"> Store</span>
@@ -139,7 +140,7 @@ export default function MainNavbar() {
           </Sheet>
 
           {/* Wishlist */}
-          <Link href="/wishlist">
+          <Link href={`/${locale}/wishlist`}>
             <Button
               variant="ghost"
               size="icon"
@@ -151,7 +152,7 @@ export default function MainNavbar() {
           </Link>
 
           {/* Account */}
-          <Link href="/account">
+          <Link href={`/${locale}/account`}>
             <Button
               variant="ghost"
               size="icon"

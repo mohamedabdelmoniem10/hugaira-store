@@ -148,9 +148,7 @@ export default function ProductCard({
 
         {!compact && (
           <p className="text-muted-foreground text-sm line-clamp-1 mb-1">
-            {tCategories(product.category) ||
-              product.category.charAt(0).toUpperCase() +
-                product.category.slice(1)}
+            {(product.category as any)?.name || product.category || "Product"}
           </p>
         )}
 

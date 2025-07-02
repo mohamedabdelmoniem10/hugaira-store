@@ -19,7 +19,11 @@ export const metadata: Metadata = {
     "modest fashion, islamic clothing, niqab, abaya, hijab, isdalat, muslim women clothing",
 };
 
-export default function ProductsPage() {
+export default function ProductsPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
   return (
     <MainLayout>
       <div className="container-custom py-8">
@@ -27,7 +31,7 @@ export default function ProductsPage() {
         <Breadcrumb className="mb-6">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+              <BreadcrumbLink href={`/${params.locale}`}>Home</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
               <BreadcrumbPage>All Products</BreadcrumbPage>

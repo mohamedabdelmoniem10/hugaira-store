@@ -66,7 +66,9 @@ export default function ProductInfo({ product }: ProductInfoProps) {
         <h1 className="text-3xl md:text-4xl font-playfair mb-2">
           {product.name}
         </h1>
-        <p className="text-muted-foreground capitalize">{product.category}</p>
+        <p className="text-muted-foreground capitalize">
+          {(product.category as any)?.name || product.category}
+        </p>
       </div>
 
       {/* Rating */}
